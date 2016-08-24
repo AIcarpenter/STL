@@ -1,20 +1,21 @@
 //#include<vector>
 //#include<iostream>
+//#include<list>
+//#include<algorithm>
 //using namespace std;
 //
-//void fun(int i ,int j=0)
-//{
-//	cout << "============" << endl;
-//}
-//void fun(int i)
-//{
-//	cout << "-------------------"<< endl;
-//}
+//class A {
+//private:
+//	int i = 10;
+//public:
+//	int operator*()
+//	{
+//		return i;
+//	}
+//	A& operator->() {return & }
+//};
 //int main()
 //{
-//
-//	fun(10);
-//
-//
-//	return 0;
+//	A a;
+//	*a;
 //}

@@ -4,7 +4,7 @@
 
 
 namespace moon
-{
+{	
 	//每种迭代器都必须提供5个相应型别，用于可能的变量定义
 	//为了避免每种迭代器都实现一次5个型别，索性做出模板基类让它们继承
 	template<class Catagory,class T,class Distance=std::ptrdiff_t,class Pointer=T*,class Reference=T&>
@@ -23,19 +23,14 @@ namespace moon
 	struct bidirectional_iterator_tag:public forward_iterator_tag{};
 	struct random_access_iterator_tag: public bidirectional_iterator_tag{};
 
-	template <class Iterator>
+	template<class iter>
 	struct iterator_traits {
-		typedef typename Iterator::
+		typedef typename  iter::iterator_catagory iterator_catagory;
+		typedef typename  iter::value_type		   value_type;
+		typedef typename  iter::difference_type difference_type;
+		typedef typename	  iter::pointer					pointer;
+		typedef typename  iter::reference				reference;
 	};
-
-
-
-
-
-
-
-
-
 
 
 

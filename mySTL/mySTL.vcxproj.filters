@@ -24,6 +24,12 @@
     <ClInclude Include="moonvector.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="moonlist.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="moonalgorithm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test_moonallocator.cpp">
@@ -33,6 +39,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="test_moonvector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test_moonlist.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
