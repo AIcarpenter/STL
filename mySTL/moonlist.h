@@ -21,8 +21,8 @@ namespace moon
 		typedef T&					reference;//节点中数据的引用类型
 	public:
 		node_type* node;
-
-		list_iterator(node_type& x) { node = &x; }//不需要显示的构造函数，因为指针变量会自动被销毁
+		list_iterator() {}
+		list_iterator(node_type& x) { node = &x; }//不需要显示的析构函数，因为指针变量会自动被销毁
 		list_iterator(node_type* x) { node = x; }
 #pragma region operator override
 		bool operator==(self_type other) { return node == other.node; }
@@ -84,6 +84,17 @@ namespace moon
 			p->prv = &guard;
 			guard.next = p;
 			guard.prv = p;
+		}
+		void transfer(iterator position, iterator first, iterator last)
+		{
+			iterator tem1 = position, tem2 = first, tem3 = last;
+			--tem1, --tem2, --tem3;
+			tem1.node->next = first.node;
+			first.node->prv = tem1.node;
+			tem2.node->next = last.node;
+			last.node->prv = tem2.node;
+			tem3.node->next = position.node;
+			position.node->prv = tem3.node;
 		}
 	public:
 		list() { guard.next = &guard; guard.prv = &guard; }
@@ -152,6 +163,64 @@ namespace moon
 		}
 		void pop_back() { iterator temp = end(); erase(--temp); }
 		void pop_front() { erase(begin()); }
+#pragma endregion
+#pragma region operations
+		void splice(iterator positon, list<value_type, allocator<value_type>>& other)
+		{
+			transfer(positon, other.begin(), other.end());
+		}
+		void splice(iterator postion, list<value_type, allocator_type>& other, iterator it)
+		{
+			auto next = it;
+			transfer(postion, it, ++next);
+		}
+		void splice(iterator position, list < value_type, allocator_type > & other, iterator first, iterator last)
+		{
+			transfer(position, first, last);
+		}
+		void merge(list<value_type,allocator_type>& other)
+		{
+			iterator first_1 = this->begin(), last_1 = this->end();
+			iterator first_2 = other.begin(), last_2 = other.end();
+			while (first_1 != last_1&&first_2 != last_2)
+			{
+				if (*first_1 > *first_2)
+				{
+					iterator temp = first_2;
+					transfer(first_1, first_2, ++first_2);
+				}
+				else ++first_1;
+			}
+			if (first_2 != last_2) transfer(first_1, first_2, last_2);
+
+		}
+		void reverse()
+		{
+			if (guard.next == guard.prv) return;//只有一个节点或空链表
+			iterator first =this-> begin();
+			iterator last = this->end();
+			iterator pos=first,next,temp=guard;
+			while (pos != last)
+			{
+				next = pos.node->next;
+				pos.node->next = temp.node;
+				temp = pos;
+				pos = next;
+			}
+			pos.node->next = temp.node;
+			temp = first;
+			while (pos != first)
+			{
+				pos.node->prv = temp.node;
+				temp = pos;
+				pos = pos.node->next;
+			}
+			pos.node->prv = last.node;
+		}
+		void sort()
+		{
+			//-不会写。。。。。
+		}
 #pragma endregion
 
 #pragma endregion
