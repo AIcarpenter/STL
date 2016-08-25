@@ -15,7 +15,7 @@ namespace moon
 
 	//list迭代器
 	template <class T>
-	class list_iterator :public iterator<bidirectional_iterator_tag, T> {
+	class list_iterator :public bidirectional_iterator<T> {
 		typedef list_iterator<T> self_type;
 		typedef list_node<T>	node_type;
 		typedef T&					reference;//节点中数据的引用类型

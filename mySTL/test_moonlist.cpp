@@ -3,16 +3,14 @@
 #include<algorithm>
 #include<iostream>
 #include<string>
+#include<ctime>
 using namespace std;
 
-
-
+#define SIZE 1000
+#define TYPE int
+#define VALUE 12345
 int main()
 {
-	moon::list<string> container;
-	container.push_back("hello world");
-	container.push_back("i am robot");
-	container.push_back("hello kitty");
-	sort(container.begin(), container.end());
-	//cout << *x << endl;
+	
+	getchar();
 }
