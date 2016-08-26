@@ -2,8 +2,8 @@
 #include<cstddef>//size_t and ptrdiff_t
 #include<limits>//numeric_limits
 #include<iostream>
-#define DEBUG_WORDS std::cout<<"hello kitty-"<<__LINE__<<std::endl;
-//#define DEBUG_WORDS ;
+//#define DEBUG_WORDS std::cout<<"hello kitty-"<<__LINE__<<std::endl;
+#define DEBUG_WORDS ;
 namespace moon
 {
 	template <class T>

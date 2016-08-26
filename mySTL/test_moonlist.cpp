@@ -3,19 +3,40 @@
 //#include<algorithm>
 //#include<iostream>
 //#include<string>
-//
+//#include<Windows.h>
 //using namespace std;
 //
-//#define SIZE 1000
-//#define TYPE int
-//#define VALUE 12345
+//#define SIZE 10000000
+//#define TYPE string
+//#define VALUE "hello--------world"
+//void fun_moon()
+//{
+//	moon::list<TYPE> col1;
+//	for (int i = 0; i != SIZE; ++i)
+//		col1.push_back(VALUE);
+//}
+//void fun_stl()
+//{
+//	list<TYPE> col2;
+//	for (int i = 0; i != SIZE; ++i)
+//		col2.push_back(VALUE);
+//}
 //int main()
 //{
-//	moon::list<int> c1;
-//	c1.push_back(1);
-//	c1.push_back(2);
-//	c1.push_back(3);
-//	c1.push_back(4);
-//	c1.reverse();
+//	auto begin = GetTickCount();
+//	{	
+//		fun_stl();
+//	}
+//	cout << "stl---"<<GetTickCount() - begin << endl;
+//	begin = GetTickCount();
+//	{
+//		fun_moon();
+//	}
+//	cout << "moon--"<<GetTickCount() - begin << endl;
+//
+//
+//
+//
+//
 //	getchar();
 //}

@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="moonalgorithm.h" />
     <ClInclude Include="moonallocator.h" />
+    <ClInclude Include="moondeque.h" />
     <ClInclude Include="mooniterator_base.h" />
     <ClInclude Include="moonlist.h" />
     <ClInclude Include="moonvector.h" />
@@ -151,6 +152,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="test_moonallocator.cpp" />
+    <ClCompile Include="test_moondeque.cpp" />
     <ClCompile Include="test_moonlist.cpp" />
     <ClCompile Include="test_moonvector.cpp" />
   </ItemGroup>
