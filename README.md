@@ -13,8 +13,8 @@ vector              100%--------------------------------预期功能已完成，
 list                100%--------------------------------预期功能已完成，其他功能不再补充    
 deque               100%--------------------------------预期功能已完成，期间发现c++11新特性：：rvalue-reference  
 stack  
-queue    
-heappriority_queue  
+queue         
+heappriority_queue  100%
 slist  
 关联式容器：：：：   
 binary-search-tree   
