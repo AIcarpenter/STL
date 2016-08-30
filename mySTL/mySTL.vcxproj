@@ -142,6 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="heap.h" />
     <ClInclude Include="moonalgorithm.h" />
     <ClInclude Include="moonallocator.h" />
     <ClInclude Include="moondeque.h" />
