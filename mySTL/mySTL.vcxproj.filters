@@ -33,7 +33,10 @@
     <ClInclude Include="moondeque.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="heap.h">
+    <ClInclude Include="moonheap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="moonqueue.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

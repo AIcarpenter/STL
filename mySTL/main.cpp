@@ -5,7 +5,7 @@
 #include<algorithm>
 #include<queue>
 #include<allocators>
-#include"heap.h"
+#include"moonheap.h"
 using namespace std;
 
 class A {
@@ -21,11 +21,14 @@ public:
 
 int main()
 {
-	int ia[9] = { 5,2,5,-2,4,5,1,23,-9 };
-	vector<int> ivec(ia, ia + 9);
-	moon::make_heap(ivec.begin(), ivec.end()-1);
-	moon::sort_heap(ivec.begin(), ivec.end());
+	priority_queue<int> col;
+	col.push(1);
+	col.push(12);
+	col.push(-11);
+	col.push(-1);
+
+
+	
+	cout << endl;
 	getchar();
-
-
 }
