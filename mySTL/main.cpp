@@ -1,34 +1,28 @@
-#include"moonvector.h"
-#include<vector>
+#include "moon_binary_serach_tree.h"
 #include<iostream>
-#include<list>
-#include<algorithm>
-#include<queue>
-#include<allocators>
-#include"moonheap.h"
+
 using namespace std;
-
-class A {
-private:
-	int a;
-public:
-	A() {}
-	A(int x) :a(x) {}
-	~A() {}
-	A(const A& other) { cout << "copy-constructor invocated." << endl; }
-	A& operator=(const A& other) { cout << "copy-assignment constructor invocated" << endl; return *this; }
-};
-
 int main()
 {
-	priority_queue<int> col;
-	col.push(1);
-	col.push(12);
-	col.push(-11);
-	col.push(-1);
-
-
-	
-	cout << endl;
-	getchar();
+	{
+		moon::binary_search_tree<int> col;
+		col.insert(1);
+		col.insert(3);
+		col.insert(-2);
+		col.insert(10);
+		col.insert(-111);
+		for (auto& ite = col.begin(); ite != col.end(); ++ite)
+			cout << *ite << endl;
+		auto x = col.find(-2);
+		col.erase(x);
+		cout << "-------------" << endl;
+		for (auto ite = col.begin(); ite != col.end(); ++ite)
+			cout << *ite << endl;
+		x = col.find(10);
+		col.erase(x);
+		cout << "-------------" << endl;
+		for (auto ite = col.begin(); ite != col.end(); ++ite)
+			cout << *ite << endl;
+	}
+	_CrtDumpMemoryLeaks();
 }

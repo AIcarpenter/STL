@@ -2,8 +2,8 @@
 #include<cstddef>//size_t and ptrdiff_t
 #include<limits>//numeric_limits
 #include<iostream>
-//#define DEBUG_WORDS std::cout<<"debug-words:-"<<__LINE__<<"-"<<__FILE__<<std::endl;
-#define DEBUG_WORDS ;
+#define DEBUG_WORDS std::cout<<"debug-words:-"<<__LINE__<<"-"<<__FILE__<<std::endl;
+//#define DEBUG_WORDS ;
 namespace moon
 {
 	template <class T>
@@ -57,14 +57,14 @@ namespace moon
 
 		void construct(pointer p, const_reference x)
 		{  
-			DEBUG_WORDS
+			//DEBUG_WORDS
 			//使用 placement-new:不分配内存，而是直接在内存上(p)构造对象
 			 new (p) T(x);
 		}
 
 		void destroy(pointer p)
 		{
-			DEBUG_WORDS
+			//DEBUG_WORDS
 			//销毁对象，但不收回内存
 			p->~value_type();
 		}
