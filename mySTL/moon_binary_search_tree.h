@@ -111,7 +111,7 @@ namespace moon
 		
 	};
 
-	template<class T>
+	template<class T,class Alloc=allocator<T>>
 	class binary_search_tree {
 		typedef T value_type;
 		typedef T* pointer;
@@ -122,7 +122,7 @@ namespace moon
 		typedef binary_search_tree<T> self_type;
 		typedef bst_node<T> node_type;
 		typedef bst_node<T>* node_pointer;
-		typedef allocator<T> element_allcoator_type;
+		typedef Alloc element_allcoator_type;
 		typedef allocator<bst_node<T>> node_allcoator_type;
 		typedef bst_iterator<T> iterator;
 		typedef const bst_iterator<T> const_iterator;
@@ -199,7 +199,7 @@ namespace moon
 #pragma endregion
 
 	public:
-#pragma region cosntructors and destructors
+#pragma region constructors and destructors
 		binary_search_tree()
 		{
 			header = create_node();

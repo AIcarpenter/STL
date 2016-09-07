@@ -39,7 +39,10 @@
     <ClInclude Include="moonqueue.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="moon_binary_serach_tree.h">
+    <ClInclude Include="moon_set.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="moon_binary_search_tree.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
